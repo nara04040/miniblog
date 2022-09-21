@@ -44,11 +44,11 @@ const state = {
   headerText: 'My Diary Memo',
   // memoItemArr : storage.getData(),
   memoItemArr : [],
-  iconArr : ['play1.png','play2.png','rocket.gif']
+  iconArr : ['dog1.png','dog2.png','dog3.png']
 };
 const actions = {
       fetchReadMemo(context){
-        axios.get('http://kdnjw.dothome.co.kr/page-miniblog/read.php')
+        axios.get('http://nara04040.dothome.co.kr/page-miniblog/read.php')
         .then(response => {
           context.commit("READ_MEMO", response.data.result)
         })
@@ -65,7 +65,7 @@ const actions = {
           date : timeUtil.getCurrentTime(),
           icon : state.iconArr[obj.index] 
         }
-        axios.get(`http://kdnjw.dothome.co.kr/page-miniblog/write.php?user=${addData.user}&title=${addData.title}&date=${addData.date}&icon=${addData.icon}`)
+        axios.get(`http://nara04040.dothome.co.kr/page-miniblog/write.php?user=${addData.user}&title=${addData.title}&date=${addData.date}&icon=${addData.icon}`)
         .then(res => {
           if(res.data.result == 1){
             // console.log('목록가져오기')
@@ -80,7 +80,7 @@ const actions = {
         // 서버의 주소로 접근해 데이터를 지운다.
         // 정상적으로 처리되었다면 아래를 실행한다.
         // context.commit("DELETE_MEMO", obj);
-        axios.get(`http://kdnjw.dothome.co.kr/page-miniblog/delete.php?id=${obj.id}`)
+        axios.get(`http://nara04040.dothome.co.kr/page-miniblog/delete.php?id=${obj.id}`)
         .then(res => {
           console.log('서버측 회신', res.data);
           console.log('삭제',obj)
@@ -99,7 +99,7 @@ const actions = {
           complete = 1;
         }
        
-        axios.get(`http://kdnjw.dothome.co.kr/page-miniblog/update.php?id=${obj.item.id}&complete${complete}`)
+        axios.get(`http://nara04040.dothome.co.kr/page-miniblog/update.php?id=${obj.item.id}&complete${complete}`)
         
         .then(response=>{
           console.log('업데이트',response.data);
@@ -111,7 +111,7 @@ const actions = {
         // 서버의 주소로 접근해 delete한다.
         // 정상적으로 실행되었다면
         // 아래를 실행한다.
-        axios.get("http://kdnjw.dothome.co.kr/page-miniblog/delete.php?id=all")
+        axios.get("http://nara04040.dothome.co.kr/page-miniblog/delete.php?id=all")
         .then(response => {
           console.log('전체삭제 ', response.data);
           commit("CLEAR_MEMO");
@@ -152,7 +152,7 @@ const mutations = {
       // state.memoItemArr.push(memoTemp);  
       
       // axios를 이용해서 추가된 데이터의 정보를 가져와서 목록 한개를 추가한다.
-      axios.get(`http://kdnjw.dothome.co.kr/page-miniblog/get.php?user=${payload.user}`)
+      axios.get(`http://nara04040.dothome.co.kr/page-miniblog/get.php?user=${payload.user}`)
 
      
       

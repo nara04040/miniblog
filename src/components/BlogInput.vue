@@ -132,7 +132,7 @@
     height: 40px;
     font-size: 0;
     cursor: pointer;
-    background: url('@/assets/images/play1.png') no-repeat center;
+    background: url('@/assets/images/dog1.png') no-repeat center;
     background-size: cover;
   }
 
@@ -142,7 +142,7 @@
     height: 40px;
     font-size: 0;
     cursor: pointer;
-    background: url('@/assets/images/play2.png') no-repeat center;
+    background: url('@/assets/images/dog2.png') no-repeat center;
     background-size: cover;
   }
 
@@ -152,7 +152,7 @@
     height: 40px;
     font-size: 0;
     cursor: pointer;
-    background: url('@/assets/images/rocket.gif') no-repeat center;
+    background: url('@/assets/images/dog3.png') no-repeat center;
     background-size: cover;
   }
 
